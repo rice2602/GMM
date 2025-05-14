@@ -17,7 +17,7 @@ model:
   # generation configs
   prompt: ""
 
-  llama_model: "/path/to/vicuna-7b"
+  llama_model: "/mnt/d/Work/Hoc/KLTN/GMM"
 
 preprocess:
     vis_processor:
