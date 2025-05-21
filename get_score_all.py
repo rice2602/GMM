@@ -83,9 +83,10 @@ for task_id, name in enumerate(all_name):
         with torch.no_grad():  
             text_features_label = model.encode_text(text)
             predict_feature = model.encode_text(predict_text)
-
+            #before KLDA
             #text_features_label = text_features_label / text_features_label.norm(dim=1, keepdim=True)
             #predict_feature = predict_feature / predict_feature.norm(dim=1, keepdim=True)
+            #After KLDA
             text_features_label = _compute_rff(text_features_label,d = text_features_label.shape[1],D=5000,sigma=sigma,device=device)
             predict_feature = _compute_rff(predict_feature,d = predict_feature.shape[1],D = 5000,sigma=sigma,device=device)
             
